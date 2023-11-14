@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B4BC9D50-040C-4554-9791-327526D5B049}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomerService", "CustomerService", "{1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "giks.OnlineStore.CustomerService.Domain", "src\giks.OnlineStore.CustomerService.Domain\giks.OnlineStore.CustomerService.Domain.csproj", "{70C04CED-0592-4786-BA3D-9440061D3A1C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "giks.OnlineStore.CustomerService.Application", "src\giks.OnlineStore.CustomerService.Application\giks.OnlineStore.CustomerService.Application.csproj", "{50CFEA5A-BD82-4800-9BF2-0FB74318ACBB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "giks.OnlineStore.CustomerService.Infrastructure", "src\giks.OnlineStore.CustomerService.Infrastructure\giks.OnlineStore.CustomerService.Infrastructure.csproj", "{161F668C-E661-40F7-BED3-F2EE0D97593F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "giks.OnlineStore.CustomerService.Host", "src\giks.OnlineStore.CustomerService.Host\giks.OnlineStore.CustomerService.Host.csproj", "{62221E68-DDC3-4E75-80BF-C6DF04F3F86C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1906C5A3-D3D5-46C7-BB2E-47990FEAF72C} = {B4BC9D50-040C-4554-9791-327526D5B049}
+		{70C04CED-0592-4786-BA3D-9440061D3A1C} = {1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}
+		{50CFEA5A-BD82-4800-9BF2-0FB74318ACBB} = {1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}
+		{161F668C-E661-40F7-BED3-F2EE0D97593F} = {1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}
+		{62221E68-DDC3-4E75-80BF-C6DF04F3F86C} = {1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70C04CED-0592-4786-BA3D-9440061D3A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70C04CED-0592-4786-BA3D-9440061D3A1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70C04CED-0592-4786-BA3D-9440061D3A1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70C04CED-0592-4786-BA3D-9440061D3A1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50CFEA5A-BD82-4800-9BF2-0FB74318ACBB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50CFEA5A-BD82-4800-9BF2-0FB74318ACBB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50CFEA5A-BD82-4800-9BF2-0FB74318ACBB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50CFEA5A-BD82-4800-9BF2-0FB74318ACBB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{161F668C-E661-40F7-BED3-F2EE0D97593F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{161F668C-E661-40F7-BED3-F2EE0D97593F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{161F668C-E661-40F7-BED3-F2EE0D97593F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{161F668C-E661-40F7-BED3-F2EE0D97593F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{62221E68-DDC3-4E75-80BF-C6DF04F3F86C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62221E68-DDC3-4E75-80BF-C6DF04F3F86C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62221E68-DDC3-4E75-80BF-C6DF04F3F86C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62221E68-DDC3-4E75-80BF-C6DF04F3F86C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
