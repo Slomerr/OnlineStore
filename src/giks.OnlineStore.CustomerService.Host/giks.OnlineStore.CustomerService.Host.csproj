@@ -2,8 +2,10 @@
 
     <PropertyGroup>
         <TargetFramework>net7.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <NoWarn>1591</NoWarn>
     </PropertyGroup>
-
 </Project>
