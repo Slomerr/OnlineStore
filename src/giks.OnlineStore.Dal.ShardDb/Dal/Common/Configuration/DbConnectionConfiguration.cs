@@ -1,6 +1,9 @@
 namespace giks.OnlineStore.Dal.ShardDb.Dal.Common.Configuration;
 
 public record DbConnectionConfiguration(
-    string DbName,
-    string UserId,
-    string Password);
+    string DbName, 
+    string UserId, 
+    string Password)
+{
+    public const string Path = "DbConnectionConfiguration";
+}

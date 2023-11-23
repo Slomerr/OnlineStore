@@ -19,6 +19,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\giks.OnlineStore.CustomerService.Application\giks.OnlineStore.CustomerService.Application.csproj" />
+      <ProjectReference Include="..\giks.OnlineStore.Dal.ShardDb\giks.OnlineStore.Dal.ShardDb.csproj" />
     </ItemGroup>
 
     <ItemGroup>
