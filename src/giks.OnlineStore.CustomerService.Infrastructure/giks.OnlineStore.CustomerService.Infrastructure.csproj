@@ -10,8 +10,20 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Dapper" Version="2.1.21" />
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="7.0.0" />
       <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="7.0.1" />
+      <PackageReference Include="murmurhash" Version="1.0.3" />
+      <PackageReference Include="Npgsql" Version="7.0.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\giks.OnlineStore.CustomerService.Application\giks.OnlineStore.CustomerService.Application.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Dal\Exceptions" />
+      <Folder Include="Dal\Migrations" />
     </ItemGroup>
 
 </Project>
