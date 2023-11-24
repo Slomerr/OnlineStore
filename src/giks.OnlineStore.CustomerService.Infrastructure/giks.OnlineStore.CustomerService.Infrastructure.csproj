@@ -22,9 +22,4 @@
       <ProjectReference Include="..\giks.OnlineStore.Dal.ShardDb\giks.OnlineStore.Dal.ShardDb.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Dal\Exceptions" />
-      <Folder Include="Dal\Migrations" />
-    </ItemGroup>
-
 </Project>

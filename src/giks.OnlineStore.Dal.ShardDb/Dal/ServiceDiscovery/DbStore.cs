@@ -9,7 +9,7 @@ internal sealed class DbStore : IDbStore
     public DbStore(DbStoreOptions options)
     {
         _endpoints = options.Endpoints.ToList();
-        BucketsCount = options.Endpoints.Sum(x => x.BucketIds.Length);
+        BucketsCount = options.Endpoints.Sum(x => x.BucketIds.Count);
     }
 
     public int BucketsCount { get; }

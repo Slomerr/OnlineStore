@@ -52,13 +52,15 @@ public static class DalConfigurationBuilder
 
     public static IServiceCollection AddDbStore(this IServiceCollection services, IConfiguration configuration)
     {
-        var endpoints = configuration.GetSection(ServiceDiscoveryConstants.DbEndpointsPath).Get<List<DbEndpoint>>();
-        if (endpoints == null)
+        var section = configuration.GetSection(DbStoreOptions.Path);
+        List<DbEndpointConfig> endpoints = new List<DbEndpointConfig>();
+        foreach (var sumSection in section.GetChildren())
         {
-            throw new DbEndpointsConfigurationIsNll();
+            endpoints.Add(sumSection.Get<DbEndpointConfig>()!);
         }
         
-        services.AddSingleton(_ => new DbStoreOptions(endpoints));
+        services.AddSingleton(_ => new DbStoreOptions(
+            endpoints.Select(endpointConfig => endpointConfig.Map()).ToList()));
         services.AddSingleton<IDbStore, DbStore>();
         return services;
     }

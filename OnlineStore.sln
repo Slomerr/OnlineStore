@@ -10,9 +10,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "giks.OnlineStore.CustomerSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "giks.OnlineStore.CustomerService.Infrastructure", "src\giks.OnlineStore.CustomerService.Infrastructure\giks.OnlineStore.CustomerService.Infrastructure.csproj", "{161F668C-E661-40F7-BED3-F2EE0D97593F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "giks.OnlineStore.CustomerService.Host", "src\giks.OnlineStore.CustomerService.Host\giks.OnlineStore.CustomerService.Host.csproj", "{62221E68-DDC3-4E75-80BF-C6DF04F3F86C}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "giks.OnlineStore.Dal.ShardDb", "src\giks.OnlineStore.Dal.ShardDb\giks.OnlineStore.Dal.ShardDb.csproj", "{CA67B675-F8A1-47A6-BEB8-C54EEC886367}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "giks.OnlineStore.CustomerService.Migration", "src\giks.OnlineStore.CustomerService.Migration\giks.OnlineStore.CustomerService.Migration.csproj", "{D67353A0-4F15-4CFC-946B-BEEAA94E7563}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{9F960BFA-0AE5-4B5C-A12D-8C35F99748E4}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yaml = docker-compose.yaml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,8 +29,9 @@ Global
 		{70C04CED-0592-4786-BA3D-9440061D3A1C} = {1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}
 		{50CFEA5A-BD82-4800-9BF2-0FB74318ACBB} = {1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}
 		{161F668C-E661-40F7-BED3-F2EE0D97593F} = {1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}
-		{62221E68-DDC3-4E75-80BF-C6DF04F3F86C} = {1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}
 		{CA67B675-F8A1-47A6-BEB8-C54EEC886367} = {1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}
+		{D67353A0-4F15-4CFC-946B-BEEAA94E7563} = {1906C5A3-D3D5-46C7-BB2E-47990FEAF72C}
+		{9F960BFA-0AE5-4B5C-A12D-8C35F99748E4} = {B4BC9D50-040C-4554-9791-327526D5B049}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{70C04CED-0592-4786-BA3D-9440061D3A1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -40,13 +46,13 @@ Global
 		{161F668C-E661-40F7-BED3-F2EE0D97593F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{161F668C-E661-40F7-BED3-F2EE0D97593F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{161F668C-E661-40F7-BED3-F2EE0D97593F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{62221E68-DDC3-4E75-80BF-C6DF04F3F86C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{62221E68-DDC3-4E75-80BF-C6DF04F3F86C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{62221E68-DDC3-4E75-80BF-C6DF04F3F86C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{62221E68-DDC3-4E75-80BF-C6DF04F3F86C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CA67B675-F8A1-47A6-BEB8-C54EEC886367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CA67B675-F8A1-47A6-BEB8-C54EEC886367}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA67B675-F8A1-47A6-BEB8-C54EEC886367}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA67B675-F8A1-47A6-BEB8-C54EEC886367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D67353A0-4F15-4CFC-946B-BEEAA94E7563}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D67353A0-4F15-4CFC-946B-BEEAA94E7563}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D67353A0-4F15-4CFC-946B-BEEAA94E7563}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D67353A0-4F15-4CFC-946B-BEEAA94E7563}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

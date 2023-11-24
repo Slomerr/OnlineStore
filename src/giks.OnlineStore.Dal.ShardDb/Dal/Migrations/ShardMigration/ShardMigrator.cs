@@ -3,6 +3,7 @@ using FluentMigrator.Runner;
 using giks.OnlineStore.Dal.ShardDb.Dal.Common.Connection;
 using giks.OnlineStore.Dal.ShardDb.Dal.ServiceDiscovery;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace giks.OnlineStore.Dal.ShardDb.Dal.Migrations.ShardMigration;
 
@@ -10,17 +11,21 @@ internal sealed class ShardMigrator : IMigrator
 {
     private readonly IDbConnectionStringBuilder _connectionBuilder;
     private readonly IDbStore _dbStore;
+    private readonly ILogger<ShardMigrator> _logger;
 
     public ShardMigrator(
         IDbConnectionStringBuilder connectionBuilder,
-        IDbStore dbStore)
+        IDbStore dbStore,
+        ILogger<ShardMigrator> logger)
     {
         _connectionBuilder = connectionBuilder;
         _dbStore = dbStore;
+        _logger = logger;
     }
     
     public Task Migrate(CancellationToken token, Assembly assemblyWithMigrations)
     {
+        _logger.LogDebug("Start migration");
         var endpoints = _dbStore.GetAllEndpoints();
         foreach (var endpoint in endpoints)
         {

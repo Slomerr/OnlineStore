@@ -3,7 +3,7 @@ using Murmur;
 
 namespace giks.OnlineStore.Dal.ShardDb.Dal.Common.Connection.Rules;
 
-internal sealed class LongShardingRule : IShardingRule<long>
+public sealed class LongShardingRule : IShardingRule<long>
 {
     private readonly IDbStore _dbStore;
 

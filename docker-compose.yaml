@@ -1,0 +1,24 @@
+version: "3.9"
+
+services:
+  
+  customer-db-shard-1:
+    image: postgres:latest
+    container_name: customer-db-shard-1
+    environment:
+      - POSTGRES_USER=test_customer
+      - POSTGRES_PASSWORD=test_customer_pass
+      - POSTGRES_DB=customer-service-db
+    ports:
+      - "5391:5432"
+    
+    
+  customer-db-shard-2:
+    image: postgres:latest
+    container_name: customer-db-shard-2
+    environment:
+      - POSTGRES_USER=test_customer
+      - POSTGRES_PASSWORD=test_customer_pass
+      - POSTGRES_DB=customer-service-db
+    ports:
+      - "5392:5432"
