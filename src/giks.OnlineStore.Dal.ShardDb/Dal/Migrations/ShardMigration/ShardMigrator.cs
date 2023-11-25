@@ -12,20 +12,29 @@ internal sealed class ShardMigrator : IMigrator
     private readonly IDbConnectionStringBuilder _connectionBuilder;
     private readonly IDbStore _dbStore;
     private readonly ILogger<ShardMigrator> _logger;
+    private readonly MigrationConfiguration _migrationConfiguration;
 
     public ShardMigrator(
         IDbConnectionStringBuilder connectionBuilder,
         IDbStore dbStore,
-        ILogger<ShardMigrator> logger)
+        ILogger<ShardMigrator> logger,
+        MigrationConfiguration migrationConfiguration)
     {
         _connectionBuilder = connectionBuilder;
         _dbStore = dbStore;
         _logger = logger;
+        _migrationConfiguration = migrationConfiguration;
     }
     
     public Task Migrate(CancellationToken token, Assembly assemblyWithMigrations)
     {
         _logger.LogDebug("Start migration");
+        if (!_migrationConfiguration.IsMigrate)
+        {
+            _logger.LogWarning("Start migration down to version {migrationVersion}",
+                _migrationConfiguration.DownToMigrationVersion);
+        }
+        
         var endpoints = _dbStore.GetAllEndpoints();
         foreach (var endpoint in endpoints)
         {
@@ -37,7 +46,14 @@ internal sealed class ShardMigrator : IMigrator
                 var context = scope.ServiceProvider.GetRequiredService<BucketMigrationContext>();
                 context.UpdateCurrentSchema(bucketId);
                 var runner = scope.ServiceProvider.GetRequiredService<IMigrationRunner>();
-                runner.MigrateUp();
+                if (_migrationConfiguration.IsMigrate)
+                {
+                    runner.MigrateUp();
+                }
+                else
+                {
+                    runner.MigrateDown(_migrationConfiguration.DownToMigrationVersion);
+                }
             }
         }
         

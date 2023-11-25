@@ -1,4 +1,4 @@
-using System.Data;
+using System.Data.Common;
 using giks.OnlineStore.Dal.ShardDb.Dal.Common.Connection.ShardConnection;
 using giks.OnlineStore.Dal.ShardDb.Dal.ServiceDiscovery;
 using Npgsql;
@@ -18,7 +18,7 @@ internal sealed class ShardDbConnectionFactory : IShardDbConnectionFactory
         _connectionStringBuilder = connectionStringBuilder;
     }
 
-    public IDbConnection GetConnection(int bucketId)
+    public DbConnection GetConnection(int bucketId)
     {
         var endpoint = _dbStore.GetEndpoint(bucketId);
         var connectionString = _connectionStringBuilder.BuildConnectionString(endpoint);

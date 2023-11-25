@@ -16,7 +16,7 @@ internal sealed class Startup
         services.AddDbConfiguration(_configuration)
             .AddDbStore(_configuration)
             .AddConnectionBuilder()
-            .AddShardMigrator();
+            .AddShardMigrator(_configuration);
     }
 
     public void Configure(IApplicationBuilder app)

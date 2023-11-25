@@ -16,7 +16,11 @@ create table customer(
     email text,
     phone_number text,
     date_creation bigint
-)
+);
+
+create index customer_id_idx 
+    on customer (customer_id);
+
 ";
     }
 

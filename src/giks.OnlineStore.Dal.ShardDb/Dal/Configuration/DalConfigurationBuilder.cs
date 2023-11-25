@@ -44,8 +44,11 @@ public static class DalConfigurationBuilder
         return services;
     }
 
-    public static IServiceCollection AddShardMigrator(this IServiceCollection services)
+    public static IServiceCollection AddShardMigrator(this IServiceCollection services, IConfiguration configuration)
     {
+        var migrationConfiguration =
+            configuration.GetSection(MigrationConfiguration.Path).Get<MigrationConfiguration>();
+        services.AddSingleton<MigrationConfiguration>(_ => migrationConfiguration!);
         services.AddSingleton<IMigrator, ShardMigrator>();
         return services;
     }

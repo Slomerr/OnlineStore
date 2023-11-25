@@ -1,8 +1,8 @@
-using System.Data;
+using System.Data.Common;
 
 namespace giks.OnlineStore.Dal.ShardDb.Dal.Common.Connection;
 
 public interface IShardDbConnectionFactory
 {
-    IDbConnection GetConnection(int bucketId);
+    DbConnection GetConnection(int bucketId);
 }

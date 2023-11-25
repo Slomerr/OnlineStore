@@ -19,7 +19,10 @@ public abstract class SqlMigration : IMigration
         
         context.Expressions.Add(new ExecuteSqlStatementExpression { SqlStatement = $"set search_path to {schema}"});
         var sqlStatement = GetUpSql(context.ServiceProvider);
-        context.Expressions.Add(new ExecuteSqlStatementExpression{SqlStatement = sqlStatement});
+        if (!string.IsNullOrEmpty(sqlStatement))
+        {
+            context.Expressions.Add(new ExecuteSqlStatementExpression { SqlStatement = sqlStatement });
+        }
     }
 
     public void GetDownExpressions(IMigrationContext context)

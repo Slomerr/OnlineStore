@@ -6,9 +6,12 @@ namespace giks.OnlineStore.Dal.ShardDb.Dal.Migrations.ShardMigration;
 public sealed class BucketMigrationContext
 {
     private string _currentSchema = string.Empty;
+    
+    public int BucketId { get; private set; }
 
     public void UpdateCurrentSchema(int bucketId)
     {
+        BucketId = bucketId;
         _currentSchema = DbConstants.GetSchemaName(bucketId);
     }
 
