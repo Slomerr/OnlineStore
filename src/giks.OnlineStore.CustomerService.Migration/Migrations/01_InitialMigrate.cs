@@ -21,6 +21,7 @@ create table customer(
 create index customer_id_idx 
     on customer (customer_id);
 
+alter system set max_connections to 50;
 ";
     }
 

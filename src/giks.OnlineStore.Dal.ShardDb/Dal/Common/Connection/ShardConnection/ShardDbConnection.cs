@@ -6,12 +6,13 @@ namespace giks.OnlineStore.Dal.ShardDb.Dal.Common.Connection.ShardConnection;
 
 internal sealed class ShardDbConnection : DbConnection
 {
-    public ShardDbConnection(
-        NpgsqlConnection connection,
-        int bucketId)
+    public ShardDbConnection(NpgsqlConnection connection,
+        int bucketId, 
+        Action disposeConnection)
     {
         _connection = connection;
         _bucketId = bucketId;
+        _disposeConnection = disposeConnection;
     }
 
     public override string ConnectionString
@@ -40,7 +41,14 @@ internal sealed class ShardDbConnection : DbConnection
         var command = _connection.CreateCommand();
         return new ShardDbCommand(command, _bucketId);
     }
-    
+
+    protected override void Dispose(bool disposing)
+    {
+        _disposeConnection?.Invoke();
+        base.Dispose(disposing);
+    }
+
     private readonly NpgsqlConnection _connection;
     private readonly int _bucketId;
+    private readonly Action _disposeConnection;
 }
